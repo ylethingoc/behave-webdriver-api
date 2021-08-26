@@ -1,0 +1,7 @@
+behave==1.2.6
+selenium==3.141.0
+webdriver-manager==3.4.2
+configparser==5.0.2
+parse-type==0.5.2
+requests==2.26.0
+simplejson==3.16.0
