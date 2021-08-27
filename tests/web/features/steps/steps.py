@@ -20,7 +20,7 @@ def step_impl(context, url):
     context.driver.maximize()
 
 
-@step("We hit on {button_name} button")
+@step("We hit on the {button_name} button")
 def step_impl(context, button_name):
     if button_name.lower() == 'get_token':
         locator = "//button[contains(text(), 'Get Token')]"
@@ -66,7 +66,7 @@ def step_impl(context):
     context.oauth = context.driver.get_attribute(locator, 'value')
 
 
-@step("We store this Token into setup.cfg file")
+@step("We store this token into setup.cfg file")
 def step_impl(context):
     config.set('spotify', 'Token', str(context.oauth))
     with open('setup.cfg', 'w') as token:
