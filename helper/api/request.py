@@ -1,3 +1,6 @@
+import os
+from configparser import ConfigParser
+
 from helper.api import APIBase
 
 
@@ -8,11 +11,14 @@ class SpotifyAPI(APIBase):
         super(SpotifyAPI, self).__init__(url)
 
     def get_album_info(self, id):
+        config = ConfigParser()
+        my_file = os.path.join(os.getcwd(), 'setup.cfg')
+        config.read(my_file)
+        token = config.get('spotify', 'token')
+
         headers = {
             "Content-Type": "application/json",
-            "Authorization": "Bearer "
-                             "BQDmbAzzOU2F-RYuYa62wuwP6BXA_NjjptPwm0tKJ50C8EbT1YdABFcl7OdT6rGccuYv1AdKvkapRakzfHCBaR44oi"
-                             "SodcVZS4AUNMnYyLxmnWk2TGFc7-QB5Neb1AW4GXSYYClWrHBDutD2tYNwzy-p7WfR6fAlUpM"
+            "Authorization": "Bearer " + str(token)
         }
 
         url = 'albums/{}'.format(id)

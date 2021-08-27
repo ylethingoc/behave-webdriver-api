@@ -13,7 +13,7 @@ def step_impl(context):
     config = ConfigParser()
     my_file = os.path.join(os.getcwd(), 'setup.cfg')
     config.read(my_file)
-    context.album_id = config.get('Environment', 'Album')
+    context.album_id = config.get('spotify', 'album')
 
 
 @when("We send the request to Spotify")
@@ -32,6 +32,7 @@ def step_impl(context, status_code):
 def step_impl(context):
     context.artist = context.response.json()['artists'][0]['name']
     context.name = context.response.json()['name']
+
 
 @step("We verify that {key} is {value}")
 def step_impl(context, key, value):

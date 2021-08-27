@@ -12,7 +12,7 @@ def before_all(context):
     config.read(my_file)
 
     # Reading the browser type from the setup.cfg
-    driver = get_browser(config.get('Environment', 'Browser'))
+    driver = get_browser(config.get('environment', 'browser'))
     context.driver = driver
 
 
