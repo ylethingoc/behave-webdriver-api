@@ -3,7 +3,7 @@ import os
 from configparser import ConfigParser
 
 from helper.web import locators
-from utilities import constants
+from helper import constants
 
 config = ConfigParser()
 

@@ -2,7 +2,8 @@ import os
 from configparser import ConfigParser
 
 from helper.api import APIBase
-from utilities import constants
+from helper import constants
+
 
 class SpotifyAPI(APIBase):
 
