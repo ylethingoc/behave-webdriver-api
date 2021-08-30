@@ -9,4 +9,8 @@
 /httpRequests/
 behave-webdriver-api.iml
 geckodriver.log
+
+# Idea project config folder
 \.idea/
+
+/setup.cfg

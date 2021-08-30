@@ -2,13 +2,12 @@ import os
 from configparser import ConfigParser
 
 from helper.api import APIBase
-
+from utilities import constants
 
 class SpotifyAPI(APIBase):
 
     def __init__(self):
-        url = 'https://api.spotify.com/v1'
-        super(SpotifyAPI, self).__init__(url)
+        super(SpotifyAPI, self).__init__(constants.SPOTIFY_API)
 
     def get_album_info(self, id):
         config = ConfigParser()

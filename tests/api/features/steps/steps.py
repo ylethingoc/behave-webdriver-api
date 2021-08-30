@@ -8,12 +8,9 @@ from helper.api.request import SpotifyAPI
 rq = SpotifyAPI()
 
 
-@given("We have an album_id")
-def step_impl(context):
-    config = ConfigParser()
-    my_file = os.path.join(os.getcwd(), 'setup.cfg')
-    config.read(my_file)
-    context.album_id = config.get('spotify', 'album')
+@given("We have an album_id {album_id}")
+def step_impl(context, album_id):
+    context.album_id = album_id
 
 
 @when("We send the request to Spotify")

@@ -2,7 +2,7 @@ Feature: Spotify
 
   Scenario: Visit Spotify develop website then get the OAuth Token
     Given We have a Spotify's user and password
-    When We visit https://developer.spotify.com/console/get-artist/
+    When We visit Spotify Develop website
     And We hit on the GET_TOKEN button
     And We hit on the REQUEST_TOKEN button
     Then We navigate to LOGIN page
