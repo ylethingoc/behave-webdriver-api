@@ -1,3 +1,4 @@
+import logging
 from behave import *
 import os
 from configparser import ConfigParser
@@ -6,6 +7,7 @@ from helper.web import locators
 from helper import constants
 
 config = ConfigParser()
+logging.basicConfig(level=logging.INFO)
 
 
 @given("We have a Spotify's user and password")
@@ -14,6 +16,8 @@ def step_impl(context):
     config.read(my_file)
     context.user = config.get('spotify', 'user')
     context.passwd = config.get('spotify', 'password')
+    logging.info("User: " + str(context.user) + "\n")
+    logging.info("Password: " + str(context.passwd))
 
 
 @when("We visit Spotify Develop website")
