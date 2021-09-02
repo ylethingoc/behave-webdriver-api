@@ -11,6 +11,6 @@ behave-webdriver-api.iml
 geckodriver.log
 
 # Idea project config folder
-\.idea/
+.idea/
 
-/setup.cfg
+setup.cfg

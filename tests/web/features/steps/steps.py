@@ -16,7 +16,7 @@ def step_impl(context):
     config.read(my_file)
     context.user = config.get('spotify', 'user')
     context.passwd = config.get('spotify', 'password')
-    logging.info("User: " + str(context.user) + "\n")
+    logging.info("User: " + str(context.user))
     logging.info("Password: " + str(context.passwd))
 
 
