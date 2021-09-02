@@ -6,7 +6,12 @@ from helper.web.initial_browser import get_browser
 
 
 def before_all(context):
-    driver = get_browser(os.environ['browser'])
+    config = ConfigParser()
+    logging.info(os.path.join(os.getcwd(), 'setup.cfg'))
+    my_file = os.path.join(os.getcwd(), 'setup.cfg')
+    config.read(my_file)
+
+    driver = get_browser(config.get('environment', 'browser'))
     context.driver = driver
 
 

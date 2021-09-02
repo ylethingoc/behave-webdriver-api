@@ -58,7 +58,7 @@ def step_impl(context):
 @step("We store this token into setup.cfg file")
 def step_impl(context):
     config = ConfigParser()
-    config.add_section('spotify')
+    config.read('setup.cfg')
     config.set('spotify', 'token', str(context.oauth))
     with open('setup.cfg', 'w') as token:
         config.write(token)
