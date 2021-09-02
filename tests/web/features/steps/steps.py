@@ -6,16 +6,13 @@ from configparser import ConfigParser
 from helper.web import locators
 from helper import constants
 
-config = ConfigParser()
 logging.basicConfig(level=logging.INFO)
 
 
 @given("We have a Spotify's user and password")
 def step_impl(context):
-    my_file = os.path.join(os.getcwd(), 'setup.cfg')
-    config.read(my_file)
-    context.user = config.get('spotify', 'user')
-    context.passwd = config.get('spotify', 'password')
+    context.user = os.environ['user']
+    context.passwd = os.environ['password']
     logging.info("User: " + str(context.user))
     logging.info("Password: " + str(context.passwd))
 
@@ -60,6 +57,9 @@ def step_impl(context):
 
 @step("We store this token into setup.cfg file")
 def step_impl(context):
-    config.set('spotify', 'Token', str(context.oauth))
+    config = ConfigParser()
+    config.add_section('spotify')
+    config.set('spotify', 'token', str(context.oauth))
     with open('setup.cfg', 'w') as token:
         config.write(token)
+        token.close()
