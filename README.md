@@ -1,8 +1,8 @@
 # behave-webdriver-api
-A behave framework for webdriver multi-browser and rest-api testing.
+Behave framework for webdriver multi-browser and rest-api testing.
 
 ### 🍬 Prerequisite 
-You need an IntelliJ IDE Ulitimate version to enable Behave run type and Gherkin language
+You need an IntelliJ IDE Ultimate version to enable Behave run type and Gherkin language
 
 ### 🍰 IntelliJ Setup
 1. Download Python plugin
