@@ -1,5 +1,5 @@
 # behave-webdriver-api
-Behave framework for webdriver and rest-api testing using webdriver manager to handle multi-browser.
+Behave framework for webdriver and rest-api testing using webdriver-manager to handle multi-browser.
 
 ### 🍬 Prerequisite 
 You need an IntelliJ IDE Ultimate version to enable Behave run type and Gherkin language
