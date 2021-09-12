@@ -6,6 +6,8 @@ from helper.web.initial_browser import get_browser
 
 
 def before_all(context):
+    logging.basicConfig(level=logging.INFO)
+
     config = ConfigParser()
     logging.info(os.path.join(os.getcwd(), 'setup.cfg'))
     my_file = os.path.join(os.getcwd(), 'setup.cfg')

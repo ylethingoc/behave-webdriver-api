@@ -6,8 +6,6 @@ from configparser import ConfigParser
 from helper.web import locators
 from helper import constants
 
-logging.basicConfig(level=logging.INFO)
-
 
 @given("We have a Spotify's user and password")
 def step_impl(context):
