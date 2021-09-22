@@ -1,7 +1,7 @@
 import logging
 import os
-from configparser import ConfigParser
 from behave import *
+from configparser import ConfigParser
 
 from helper.api.request import SpotifyAPI
 
@@ -32,6 +32,7 @@ def step_impl(context, status_code):
 def step_impl(context):
     context.artist = context.response.json()['artists'][0]['name']
     context.name = context.response.json()['name']
+
 
 @step("We verify that {key} is {value}")
 def step_impl(context, key, value):

@@ -10,4 +10,4 @@ def step_impl(context):
 @then('It should have a title "DEV Community"')
 def step_impl(context):
     title = context.driver.get_title()
-    assert "DEV Community" in title, 'Wrong title! {} not in {}'.format("'DEV Community'",  "'" + title + "'")
+    assert "DEV Community" in title, 'Wrong title! {} not in {}'.format("'DEV Community'", "'" + title + "'")

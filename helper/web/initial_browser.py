@@ -14,4 +14,4 @@ def get_browser(browser):
     elif browser == 'edge':
         return SeleniumBase(webdriver.Edge(EdgeChromiumDriverManager().install()))
     else:
-        raise(Exception('{} browser not supported'.format(browser)))
+        raise (Exception('{} browser not supported'.format(browser)))

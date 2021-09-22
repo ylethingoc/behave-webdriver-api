@@ -19,4 +19,3 @@ class SeleniumBase():
 
     def close(self):
         self._driver.close()
-
