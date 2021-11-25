@@ -1,6 +1,6 @@
 import logging
-from behave import *
 import os
+from behave import *
 from configparser import ConfigParser
 
 from helper.web import locators
@@ -9,8 +9,12 @@ from helper import constants
 
 @given("We have a Spotify's user and password")
 def step_impl(context):
-    context.user = os.environ['user']
-    context.passwd = os.environ['password']
+    config = ConfigParser()
+    my_file = os.path.join(os.getcwd(), 'setup.cfg')
+    config.read(my_file)
+
+    context.user = config.get('environment', 'user')
+    context.passwd = config.get('environment', 'password')
     logging.info("User: " + str(context.user))
     logging.info("Password: " + str(context.passwd))
 

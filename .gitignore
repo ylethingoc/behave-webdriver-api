@@ -12,5 +12,3 @@ geckodriver.log
 
 # Idea project config folder
 .idea/
-
-setup.cfg
