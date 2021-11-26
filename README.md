@@ -10,10 +10,9 @@ Add Python SDK
 by using cmd `install -r requirments.txt`
 
 ### 🕹️️ How to run test
-* For IntelliJ, Select Build -> Edit Configurations -> Edit configuration templates 
+For IntelliJ, Select Build -> Edit Configurations -> Edit configuration templates 
 -> Behave -> Use SDK of module. And then in the Run config add these parameters as environment variables
 ```user=<spotify_user>;password=<spotify_pass>;browser=firefox```
-* For Docker, open shell then initial a container with 
 ```
 docker run --rm -t  `
 -e browser=chrome `
