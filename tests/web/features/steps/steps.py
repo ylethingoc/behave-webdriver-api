@@ -5,6 +5,10 @@ from configparser import ConfigParser
 
 from helper.web import locators
 from helper import constants
+from helper.web.initial_browser import get_browser
+
+
+logging.basicConfig(level=logging.INFO)
 
 
 @given("We have a Spotify's user and password")
@@ -17,6 +21,7 @@ def step_impl(context):
 
 @when("We visit Spotify Develop website")
 def step_impl(context):
+    context.driver = get_browser(os.environ['browser'])
     context.driver.open(constants.SPOTIFY_TOKEN)
     context.driver.maximize()
 
@@ -60,3 +65,4 @@ def step_impl(context):
     with open('setup.cfg', 'w') as token:
         config.write(token)
         token.close()
+    context.driver.close()
