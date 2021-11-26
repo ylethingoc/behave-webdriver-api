@@ -1,18 +1,12 @@
 import logging
 import os
-from configparser import ConfigParser
 
 from helper.web.initial_browser import get_browser
 
 
 def before_all(context):
     logging.basicConfig(level=logging.INFO)
-
-    config = ConfigParser()
-    my_file = os.path.join(os.getcwd(), 'setup.cfg')
-    config.read(my_file)
-
-    driver = get_browser(config.get('environment', 'browser'))
+    driver = get_browser(os.environ['browser'])
     context.driver = driver
 
 

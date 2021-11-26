@@ -9,12 +9,8 @@ from helper import constants
 
 @given("We have a Spotify's user and password")
 def step_impl(context):
-    config = ConfigParser()
-    my_file = os.path.join(os.getcwd(), 'setup.cfg')
-    config.read(my_file)
-
-    context.user = config.get('environment', 'user')
-    context.passwd = config.get('environment', 'password')
+    context.user = os.environ['user']
+    context.passwd = os.environ['password']
     logging.info("User: " + str(context.user))
     logging.info("Password: " + str(context.passwd))
 
@@ -39,11 +35,10 @@ def step_impl(context, button_name):
 
 @step("We navigate to {name} page")
 def step_impl(context, name):
-    locator = None
     if name.lower() == 'login':
-        context.driver.is_element_visible(locators.login)
+        assert context.driver.is_element_visible(locators.login)
     elif name.lower() == 'accept':
-        context.driver.is_element_visible(locators.accept_page_text)
+        assert context.driver.is_element_visible(locators.accept_page_text)
 
 
 @step("We input user and password to login")

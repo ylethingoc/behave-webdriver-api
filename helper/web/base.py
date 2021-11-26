@@ -28,13 +28,13 @@ class SeleniumBase():
 
     def wait_and_click(self, locator):
         element = WebDriverWait(self._driver, constants.WAIT_TIME_10_SEC).until(
-            ec.presence_of_element_located((By.XPATH, locator)))
+            ec.visibility_of_element_located((By.XPATH, locator)))
         element.click()
 
     def is_element_visible(self, locator):
         element = WebDriverWait(self._driver, constants.WAIT_TIME_10_SEC).until(
-            ec.presence_of_element_located((By.XPATH, locator)))
-        element.is_displayed()
+            ec.visibility_of_element_located((By.XPATH, locator)))
+        return element.is_displayed()
 
     def send_keys(self, locator, value):
         self._driver.find_element_by_xpath(locator).send_keys(value)
