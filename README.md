@@ -15,11 +15,13 @@ by using cmd `install -r requirments.txt`
 * Without IDE, open any terminal then use behave run command ```behave <path-to-suite>```, 
 for example ```behave tests/web/features```
 * For Docker, open any terminal then initial a container with 
-```docker run behave-webdriver-api behave <path-to-suite>```, 
-for example ```docker run behave-webdriver-api behave tests/web/features```
+```docker run ylethingoc/behave-webdriver-api behave <path-to-suite>```, 
+for example ```docker run ylethingoc/behave-webdriver-api behave tests/web/features && behave tests/api/features```
 
 ### 📌 Notice
 * You need an IntelliJ IDE Ultimate version to enable Behave run type and Gherkin language.
+* You need to add the path to your behave.exe as system variable, in my case 
+```set PATH=C:\Users\ngocy\AppData\Local\Programs\Python\Python39\Scripts;%PATH%``` the restart.
 * The test in tests/web/features/spotify.feature should be executed first to get OAuth token.
 * Disable chrome option or using other browser by changing the configuration in setup.cfg
 for UI visible.

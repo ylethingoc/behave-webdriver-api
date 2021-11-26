@@ -28,7 +28,7 @@ def step_impl(context):
 @step("We hit on the {button_name} button")
 def step_impl(context, button_name):
     if button_name.lower() == 'get_token':
-        context.driver.click(locators.get_token)
+        context.driver.click_by_javascript(locators.get_token)
     elif button_name.lower() == 'request_token':
         context.driver.click_by_javascript(locators.request_token)
     elif button_name.lower() == 'login':
