@@ -21,7 +21,7 @@ for example ```docker run ylethingoc/behave-webdriver-api behave tests/web/featu
 ### 📌 Notice
 * You need an IntelliJ IDE Ultimate version to enable Behave run type and Gherkin language.
 * You need to add the path to your behave.exe as system variable, in my case 
-```set PATH=C:\Users\ngocy\AppData\Local\Programs\Python\Python39\Scripts;%PATH%``` the restart.
+```set PATH=C:\Users\ngocy\AppData\Local\Programs\Python\Python39\Scripts;%PATH%``` then restart.
 * The test in tests/web/features/spotify.feature should be executed first to get OAuth token.
 * Disable chrome option or using other browser by changing the configuration in setup.cfg
 for UI visible.
