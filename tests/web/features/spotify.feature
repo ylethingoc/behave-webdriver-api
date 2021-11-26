@@ -1,4 +1,4 @@
-Feature: Spotify
+Feature: Spotify Web
 
   Scenario: Visit Spotify develop website then get the OAuth Token
     Given We have a Spotify's user and password

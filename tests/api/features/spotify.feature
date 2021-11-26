@@ -1,4 +1,4 @@
-Feature: Spotify
+Feature: Spotify API
 
   Scenario Outline: Verify some information of an album
     Given We have an album_id <album_id>
