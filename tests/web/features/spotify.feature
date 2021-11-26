@@ -11,4 +11,4 @@ Feature: Spotify
     Then We navigate to ACCEPT page
     When We hit on the ACCEPT button
     Then We get the OAuth Token
-#    And We store this token into setup.cfg file
+    And We store this token into setup.cfg file
