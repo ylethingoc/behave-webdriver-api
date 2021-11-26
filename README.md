@@ -11,20 +11,28 @@ by using cmd `install -r requirments.txt`
 
 ### 🕹️️ How to run test
 * For IntelliJ, Select Build -> Edit Configurations -> Edit configuration templates 
--> Behave -> Use SDK of module
-* Without IDE, open any terminal then use behave run command ```behave <path-to-suite>```, 
-for example ```behave tests/web/features```
-* For Docker, open any terminal then initial a container with 
-```docker run --rm -t ylethingoc/behave-webdriver-api behave <path-to-suite>```, 
-for example ```docker run --rm -t ylethingoc/behave-webdriver-api behave tests/web/features```
+-> Behave -> Use SDK of module. And then in the Run config add these parameters as environment variables
+```user=<spotify_user>;password=<spotify_pass>;browser=firefox```
+* For Docker, open shell then initial a container with 
+```
+docker run --rm -t  `
+-e browser=chrome `
+-e user=<spotify_user> `
+-e password=<spotify_pass> `
+ylethingoc/behave-webdriver-api `
+behave tests/web/features
+```
+```
+docker run --rm -t  `
+ylethingoc/behave-webdriver-api `
+behave tests/api/features
+```
 
 ### 📌 Notice
 * You need an IntelliJ IDE Ultimate version to enable Behave run type and Gherkin language.
-* You need to add the path to your behave.exe as system variable, in my case 
-```set PATH=C:\Users\ngocy\AppData\Local\Programs\Python\Python39\Scripts;%PATH%``` then restart.
 * The test in tests/web/features/spotify.feature should be executed first to get OAuth token.
-* Disable chrome option or using other browser by changing the configuration in setup.cfg
-for UI visible.
+* Disable chrome option ```--headless``` or using other browser by changing the configuration 
+in setup.cfg for UI visible.
 * Multi-browser is not available for Docker, only Chrome at this time.
 
 🍺🍺🍺
