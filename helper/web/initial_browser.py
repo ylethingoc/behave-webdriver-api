@@ -8,15 +8,15 @@ from helper.web import SeleniumBase
 
 
 def get_browser(browser):
-    if browser == 'chrome':
+    if browser.lower() == 'chrome':
         chrome_options = Options()
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--no-sandbox")
         return SeleniumBase(webdriver.Chrome(ChromeDriverManager().install(), chrome_options=chrome_options))
-    elif browser == 'firefox':
+    elif browser.lower() == 'firefox':
         return SeleniumBase(webdriver.Firefox(executable_path=GeckoDriverManager().install()))
-    elif browser == 'edge':
+    elif browser.lower() == 'edge':
         return SeleniumBase(webdriver.Edge(EdgeChromiumDriverManager().install()))
     else:
         raise(Exception('{} browser not supported'.format(browser)))

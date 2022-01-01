@@ -12,7 +12,7 @@ class SpotifyAPI(APIBase):
 
     def get_album_info(self, id):
         config = ConfigParser()
-        my_file = os.path.join(os.getcwd(), 'setup.cfg')
+        my_file = os.path.join(os.getcwd(), 'token.cfg')
         config.read(my_file)
         token = config.get('spotify', 'token')
 
