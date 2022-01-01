@@ -57,12 +57,12 @@ def step_impl(context):
     context.oauth = context.driver.get_attribute(locators.token_box, 'value')
 
 
-@step("We store this token into setup.cfg file")
+@step("We store this token into token.cfg file")
 def step_impl(context):
     config = ConfigParser()
-    config.read('setup.cfg')
+    config.read('token.cfg')
     config.set('spotify', 'token', str(context.oauth))
-    with open('setup.cfg', 'w') as token:
+    with open('token.cfg', 'w') as token:
         config.write(token)
         token.close()
     context.driver.close()

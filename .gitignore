@@ -17,4 +17,4 @@ helper/web/__pycache__/
 # Idea project config folder
 .idea/
 
-setup.cfg
+token.cfg
