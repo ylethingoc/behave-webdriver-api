@@ -18,13 +18,7 @@ docker run --rm -t  `
 -e browser=chrome `
 -e user=<spotify_user> `
 -e password=<spotify_pass> `
-ylethingoc/behave-webdriver-api `
-behave tests/web/features
-```
-```
-docker run --rm -t  `
-ylethingoc/behave-webdriver-api `
-behave tests/api/features
+ylethingoc/behave-webdriver-api behave
 ```
 
 ### 📌 Notice
